@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Spam Detection</title>
     <style>
-       
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -67,16 +66,13 @@
     </style>
 </head>
 <body>
-
     <div class="container">
         <h1>Email Spam Detection</h1>
-
         <form method="POST">
             <label for="email_texts">Enter multiple emails (one per line):</label>
             <textarea id="email_texts" name="email_texts" required>{{ request.form['email_texts'] if request.method == 'POST' else '' }}</textarea>
             <button type="submit" class="submit-btn">Check Emails</button>
         </form>
-
         {% if prediction_results %}
             <div class="result">
                 <h2>Prediction Results:</h2>
@@ -89,6 +85,5 @@
             </div>
         {% endif %}
     </div>
-
 </body>
 </html>
